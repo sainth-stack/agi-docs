@@ -1,0 +1,133 @@
+/* Main Header Container */
+.main-container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 24px;
+  height: 64px;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-container-header-two {
+  background-color: #2c2c2c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Content Grouping */
+.prime-container-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Navigation Links */
+.nav-elements {
+  font-size: 30px;
+  font-weight: 500;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-elements:hover {
+  color: #0078ff;
+}
+
+.nav-elements-two {
+  color: #f1f1f1;
+}
+
+/* Icons */
+.icon-element-header-two {
+  font-size: 20px;
+  color: #666;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-element-header-two:hover {
+  color: #0078ff;
+}
+
+.nav-elements-darkmode {
+  color: #ccc;
+}
+
+/* Search Bar */
+.nav-elements-header-search {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 0px 12px;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-elements-header-search:hover {
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.search-element-header {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #333;
+  padding: 2px 0;
+}
+
+.search-element-header-darkmode {
+  color: #f1f1f1;
+}
+
+.search-icon-header {
+  font-size: 18px;
+  color: #666;
+}
+
+.search-icon-header-darkmode {
+  color: #aaa;
+}
+
+/* Keyboard Shortcut Hints */
+.hint-elements {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #555;
+}
+
+.ctrl-header-search {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.ctrl-header-search-darkmode {
+  background-color: #444;
+  color: #ddd;
+}
+
+/* Buttons */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.darkmode {
+  color: #ffffff;
+}

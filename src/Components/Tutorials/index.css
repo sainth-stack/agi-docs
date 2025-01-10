@@ -1,0 +1,11 @@
+.tutorial-card-one{
+    border:1px solid #d3d3d3;
+    padding:10px;
+    background-color: transparent;
+    outline:none;
+    text-align: start;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    width: 40%;
+    margin:10px;
+}

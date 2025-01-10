@@ -1,0 +1,76 @@
+.list-python-one{
+    list-style-type: decimal;
+}
+
+.code-line-number-code-python-one{
+    font-size:16px;
+}
+
+.code-line-number-python-one{
+    font-size:16px;
+    margin-left:0px;
+}
+
+.new-one-python{
+    line-height: 1rem;
+}
+
+
+.new-one-python-container{
+    overflow-y: hidden;
+}
+
+.tab-button-python-one{
+    margin:10px;
+    padding:10px;
+    background-color:transparent;
+    outline:none;
+    border:none;
+    font-size:18px;
+}
+
+.active-tab-python{
+    border-bottom:2px solid #304bd4;
+    color:#304bd4;
+}
+
+.main-container-python{
+    padding:20px;
+}
+
+.section-3-python{
+    border-left:2px solid grey;
+    display: flex;
+    flex-direction: column;
+    position:fixed;
+    right:0;
+    top:0;
+    height:50vh;
+    margin-top:6%;
+    margin-right:50px;
+}
+
+.span-element-python-code-one{
+    margin-left:20px;
+}
+
+.codeBlockLines_p187 {
+    float: left;
+    font: inherit;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: var(--ifm-pre-padding);
+    --ifm-pre-background: var(--prism-background-color);
+}
+
+.plain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.span-element-link{
+    display:flex;
+    flex-direction: row;
+}
+

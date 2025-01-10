@@ -1,0 +1,401 @@
+.app-main-container-two {
+  background-color: #1c1e21;
+  overflow-x: hidden;
+}
+
+
+.side-bar-container-main-app {
+  width: 20%;
+  display: flex;
+  position: fixed;
+  left: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin: 10px; */
+  height: 30vh;
+}
+
+.side-bar-container-main-app-one {
+  color: #fff;
+}
+
+.side-menu-items-one {
+  color: #f0f5f5;
+}
+
+.side-menu-items {
+  text-decoration: none;
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-left: 5px;
+  color: #76abdf;
+  padding: 10px;
+}
+
+
+.mid-line-side-bar {
+  width: 95%;
+  color: #282c34;
+}
+
+.quickstart-main {
+  font-weight: 400;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 55%;
+  color: #b1adad;
+}
+
+.quickstart-main:hover {
+  background-color: #f1f2f5;
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.ul-elements-app {
+  padding: 0px;
+  width: 100%;
+}
+
+.list-element {
+  list-style-type: none;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #b1adad;
+  padding: 10px;
+  width: 100%;
+}
+
+.list-element:hover {
+  background-color: #f1f2f5;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.link-element {
+  color: #b1adad;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.nav-home-app-main {
+  background-color: #454343;
+  color: #8e8c8c;
+}
+
+.nav-home-app-main-one {
+  background-color: #454343 !important;
+  color: #8e8c8c !important;
+  font-weight: 600;
+}
+
+.inside-quickstart-element {
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.inside-quickstart-element:hover {
+  background-color: #f1f2f5;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.inside-quickstart-app {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.app-arrow {
+  font-size: 30px;
+}
+
+.active-tab {
+  color: #61dafb;
+}
+
+.active-tab-list {
+  background-color: #f1f2f5;
+  text-decoration: none;
+  font-size: 14px;
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 10px;
+  list-style-type: none;
+}
+
+.active-tab-one {
+  color: #61dafb;
+  text-decoration: none;
+  font-size: 14px;
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  /* background-color:#f2efef; */
+  margin: 10px;
+}
+
+.list-tpe {
+  margin-left: 24px;
+  list-style-type: none;
+}
+
+.main-container-app {
+  display: flex;
+  flex-direction: row;
+}
+
+.sec-container-app {
+  padding: 10px;
+  width: 80%;
+  margin-left: 15%;
+}
+
+.home-icon-home {
+  font-size: 16px;
+  margin: 15px;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.home-nav-main-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-home-app-main {
+  color: #2da4c6;
+  background-color: #f0f5f5;
+  font-size: 12px;
+  padding: 5px;
+  margin-left: 3px;
+  border-radius: 15px;
+}
+
+.link-element-width {
+  width: 100%;
+}
+
+.app-main-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: calc(100% - 15%);
+  margin-left: 15%;
+  margin-top: 0px;
+  padding: 10px;
+  padding-top: 20px;
+  background-color: #303846;
+}
+
+.footer-header {
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-element {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.footer-element:hover {
+  text-decoration: underline;
+}
+
+.main-routing-container {
+  position: relative;
+  margin-left: 60%;
+}
+
+.home-icon-home-one {
+  color: #f0f5f5;
+}
+
+.arrowlight {
+  color: #585858
+}
+
+.arrowlight-one {
+  color: #f0f5f5;
+}
+
+/* Main Sidebar Container */
+.side-bar-container-main-app {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 65px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.side-bar-container-main-app-one {
+  color: #333333;
+}
+
+/* Sidebar Link Items */
+.side-menu-items {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.side-menu-items:hover {
+  background-color: #f5f7fa;
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Active Tab Styling */
+.active-tab {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Section Divider */
+.mid-line-side-bar {
+  width: 100%;
+  height: 1px;
+  background-color: #eaeaea;
+  margin: 20px 0;
+}
+
+/* Quickstart Button */
+.quickstart-main {
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #4a4a4a;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.quickstart-main:hover {
+  background-color: #f5f7fa;
+  color: #007bff;
+}
+
+/* Dropdown Menu */
+.inside-quickstart-app {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.list-element {
+  list-style: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #4a4a4a;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.list-element:hover {
+  background-color: #f5f7fa;
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Inside Quickstart Links */
+.link-element {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  width: 100%;
+}
+
+.link-element:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+/* Arrow Icons */
+.app-arrow {
+  font-size: 20px;
+  color: #b0b0b0;
+}
+
+.app-arrow:hover {
+  color: #007bff;
+}
+
+/* Active Dropdown Links */
+.active-tab-list {
+  background-color: #f0f4ff;
+  color: #007bff;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  list-style: none;
+}
+
+/* List Items in Quickstart */
+.ul-elements-app {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .side-bar-container-main-app {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .side-menu-items,
+  .quickstart-main,
+  .list-element {
+    font-size: 14px;
+  }
+}

@@ -154,6 +154,7 @@ table tr:hover {
     flex-direction: row;
     align-items: flex-start;
     margin-left: 20px;
+    font-family: Inter;
 }
 
 .anchor-platform {

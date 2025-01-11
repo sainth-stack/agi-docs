@@ -57,16 +57,16 @@ class Guides extends Component{
         <p style={{paddingLeft:'10px'}}>Start by defining a python function that you want to use as a tool. For example, let's create a function to calculate the area of a rectangle.</p>
         <div style={{fontSize:'14px',padding:'20px' ,overflow:'auto'}} className='code-container-one-home'>
             <code>
-                <span><span style={{color:"blue"}}>def </span> calculate_area(length: float, width:float)-{'>'}float:</span><br/>
-                <span style={{color:'red',paddingLeft:'20px'}}>    """Calculate the area of a rectangle."""</span><br/>
-                <span><span style={{color:"orangered" , paddingLeft:'20px'}}> return</span> length * width</span>
+                <span><span style={{color:"blue"}} className='codefont'>def </span> calculate_area(length: float, width:float)-{'>'}float:</span><br/>
+                <span style={{color:'red',paddingLeft:'20px'}} className='codefont'>    """Calculate the area of a rectangle."""</span><br/>
+                <span><span style={{color:"orangered" , paddingLeft:'20px'}} className='codefont'> return</span> length * width</span>
             </code>
         </div>
         <h3 style={{paddingLeft:'10px'}}>Step 2: Create a Pydantic Model</h3>
         <p style={{paddingLeft:'10px'}}>Next, Createa aPydantic model to validate the input parameters of the function.</p>
         <div className='code-container-one-home'>
         <pre tabIndex='0' className='code-container-one-home'>
-            <code>
+            <code className='codefont'>
                 <span className='code-line-home'>
                     <span className='code-line-number'></span>
                     <span className='code-line-number-code'><span style={{color:'bule'}}>from</span> pydantic <span style={{color:'bule'}}> import</span> BaseMOdel, Field</span>
@@ -96,12 +96,12 @@ class Guides extends Component{
                     <span className='code-line-number-code'>      <span>"""Parameters to calculate the area of a rectangle."""</span></span>
                 </span>
                 <span className='code-line-home'>
-                    <span className='code-line-number'></span>
-                    <span className='code-line-number-code'>    length: float = Field(description = <span style={{color:'red'}}>"The length of the rectangle."</span></span>
+                    <span className='code-line-number codefont'></span>
+                    <span className='code-line-number-code codefont'>    length: float = Field(description = <span style={{color:'red'}}>"The length of the rectangle."</span></span>
                 </span>
                 <span className='code-line-home'>
-                    <span className='code-line-number'></span>
-                    <span className='code-line-number-code'>    width:float = Field(description=<span style={{color:"red"}}>"The width of the rectangle."</span></span>
+                    <span className='code-line-number codefont'></span>
+                    <span className='code-line-number-code codefont'>    width:float = Field(description=<span style={{color:"red"}}>"The width of the rectangle."</span></span>
                 </span>
                
             </code>
@@ -110,21 +110,21 @@ class Guides extends Component{
         <h3 style={{paddingLeft:'10px'}}>Step 3: Register the Tools</h3>
         <p style={{paddingLeft:'10px'}}>Now, create a Tool object and register the function using the Pydantic model.</p>
         <div className='code-container-one-home'>
-            <code>
-                <span className='code-line-number-code'><span style={{color:'blue'}}>from</span> wyge.tools.base_tool <span style={{color:'blue'}}>import</span> Tool</span><br/><br/>
-                <span className='code-line-number-code'>area_tool = Tool(AreaParams)</span>
+            <code className='codefont'>
+                <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from</span> wyge.tools.base_tool <span style={{color:'blue'}}>import</span> Tool</span><br/><br/>
+                <span className='code-line-number-code codefont'>area_tool = Tool(AreaParams)</span>
             </code>
         </div>
         <div>
         <h3 style={{paddingLeft:'10px'}}>Step 4: Use the Tool with ChatOpenAI</h3>
         <p style={{paddingLeft:'10px'}}>Finally, use your custom tool wiwth the wyge ChatOpenAI model.</p>
         <div className='code-container-one-home'>
-            <code>
-                <span className='code-line-number-code'><span style={{color:'blue'}}>from</span> wyge.models.openai <span style={{color:'blue'}}> import </span> ChatopenAI</span><br/><br/>
-                <span className='code-line-number-code'></span><br/>
-                <span className='code-line-number-code'>llm = ChatOpenAI(tools = [area_tool()])</span><br/>
-                <span className='code-line-number-code'>response = llm.run(<span style={{color:'red'}}>'Calculate the area of a rectangle with length 10 width 5.'</span></span><br/>
-                <span className='code-line-number-code'>print(response)</span><br/>
+            <code className='codefont'>
+                <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from</span> wyge.models.openai <span style={{color:'blue'}}> import </span> ChatopenAI</span><br/><br/>
+                <span className='code-line-number-code codefont'></span><br/>
+                <span className='code-line-number-code codefont'>llm = ChatOpenAI(tools = [area_tool()])</span><br/>
+                <span className='code-line-number-code codefont'>response = llm.run(<span style={{color:'red'}}>'Calculate the area of a rectangle with length 10 width 5.'</span></span><br/>
+                <span className='code-line-number-code codefont'>print(response)</span><br/>
             </code>
         </div>
         <button 
@@ -144,17 +144,17 @@ class Guides extends Component{
         </div>
         <h3 style={{paddingLeft:'10px'}}>Step 5: Gather Context</h3>
         <div className='code-container-one-home'>
-            <code>
-                <span className='code-line-number-code'>topic = <span style={{color:'red'}}>"How to tackle AI"</span></span><br/>
-                <span className='code-line-number-code'>url = <span style={{color:'red'}}>"https://www.digiotai.com"</span></span><br/>
+            <code className='codefont'>
+                <span className='code-line-number-code codefont'>topic = <span style={{color:'red'}}>"How to tackle AI"</span></span><br/>
+                <span className='code-line-number-code codefont'>url = <span style={{color:'red'}}>"https://www.digiotai.com"</span></span><br/>
                 <span></span><br/>
-                <span className='code-line-number-comment'># Collect content from website</span>
-                <span className='code-line-number-code'>prompt1 = (</span><br/>
-                <span className='code-line-number-code'>f<span style={{color:'red'}}>"Gather relevant information about the topic from the website."</span>\n</span>
-                <span className='code-line-number-code'>f"Topic:{'{topic}'}\n"</span><br/>
-                <span className='code-line-number-code'>f"Website:{'{url}}'}\n"</span><br/>
-                <span className='code-line-number-code'>)</span>
-                <span className='code-line-number-code'>context = llm.run(prompt1)</span>
+                <span className='code-line-number-comment codefont'># Collect content from website</span>
+                <span className='code-line-number-code codefont'>prompt1 = (</span><br/>
+                <span className='code-line-number-code codefont'>f<span style={{color:'red'}}>"Gather relevant information about the topic from the website."</span>\n</span>
+                <span className='code-line-number-code codefont'>f"Topic:{'{topic}'}\n"</span><br/>
+                <span className='code-line-number-code codefont'>f"Website:{'{url}}'}\n"</span><br/>
+                <span className='code-line-number-code codefont'>)</span>
+                <span className='code-line-number-code codfont'>context = llm.run(prompt1)</span>
             </code>
         </div>
         
@@ -169,43 +169,43 @@ class Guides extends Component{
             <h3 style={{paddingLeft:'10px'}}>Step 1: Create the API Function</h3>
             <p style={{paddingLeft:'10px'}}>First, define a function to fetch weather information from an API.</p>
             <div className='code-container-one-home'>
-            <code>
-                <span className='code-line-number-code'><span style={{color:'blue'}}>import</span> requests</span><br/><br/>
-                <span className='code-line-number-code'></span><br/>
-                <span className='code-line-number-code'>def get_weather(city: str) -{'>'} dict:</span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}><span style={{color:'red'}}>"""Fetch weather information for a given city."""</span></span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}>api_key = <span style={{color:'red'}}>"your-weather-api-key"</span></span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}>url = f<span style={{color:'red'}}>"http://api.weatherapi.com/v1/current.json?key={'{'}api_key{'}'}&q={'{'}city{'}'}"</span></span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}>response = requests.get(url)</span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}><span style={{color:'red'}}>return</span> response.json()</span><br/>
+            <code className='codefont'>
+                <span className='code-line-number-code codefont'><span style={{color:'blue'}}>import</span> requests</span><br/><br/>
+                <span className='code-line-number-code codefont'></span><br/>
+                <span className='code-line-number-code codefont'>def get_weather(city: str) -{'>'} dict:</span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}><span style={{color:'red'}}>"""Fetch weather information for a given city."""</span></span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}>api_key = <span style={{color:'red'}}>"your-weather-api-key"</span></span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}>url = f<span style={{color:'red'}}>"http://api.weatherapi.com/v1/current.json?key={'{'}api_key{'}'}&q={'{'}city{'}'}"</span></span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}>response = requests.get(url)</span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}><span style={{color:'red'}}>return</span> response.json()</span><br/>
             </code>
             </div>
             <div className='code-container-one-home'>
-            <code>
-                <span className='code-line-number-code'><span style={{color:'blue'}}>from</span> pydantic<span style={{color:'blue'}}> import</span> BaseModel, Field</span><br/><br/>
-                <span className='code-line-number-code'></span><br/>
-                <span className='code-line-number-code'>class WeatherParams(BaseModel):</span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}><span style={{color:'red'}}>"""Parameters to get weather information."""</span></span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}>city: str = Feild(description =  <span style={{color:'red'}}>"The city to get weather for."</span>)</span><br/>
+            <code className='codefont'>
+                <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from</span> pydantic<span style={{color:'blue'}}> import</span> BaseModel, Field</span><br/><br/>
+                <span className='code-line-number-code codefont'></span><br/>
+                <span className='code-line-number-code codefont'>class WeatherParams(BaseModel):</span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}><span style={{color:'red'}}>"""Parameters to get weather information."""</span></span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}>city: str = Feild(description =  <span style={{color:'red'}}>"The city to get weather for."</span>)</span><br/>
             </code>
             </div>
             <h3 style={{paddingLeft:'10px'}}>Step 2: Register the Tool</h3>
             <p style={{paddingLeft:'10px'}}>Next, register the API function as a tool.</p>
             <div className='code-container-one-home' style={{overflow:'auto' , padding:'10px'}}>
-                <code>
-                    <span className='code-line-number-code'><span style={{color:"red"}}>from</span> wyge.tools.base_tool <span style={{color:"blue"}}>import</span> Tool</span><br/>
-                    <span className='code-line-number-code'>weather_tool = Tool(func=get_weather, params = WeatherParams)</span><br/>
+                <code className='codefont'>
+                    <span className='code-line-number-code codefont'><span style={{color:"red"}}>from</span> wyge.tools.base_tool <span style={{color:"blue"}}>import</span> Tool</span><br/>
+                    <span className='code-line-number-code codefont'>weather_tool = Tool(func=get_weather, params = WeatherParams)</span><br/>
                 </code>
             </div>
             <h3 style={{paddingLeft:'10px'}}>Step 3: Use the Tool in ChatOPenAI</h3>
             <p style={{paddingLeft:'10px'}}>Finally, use the weather tool with the ChatOpenAI model.</p>
             <div className='code-container-one-home'>
-            <code>
-                <span className='code-line-number-code'><span style={{color:'blue'}}>from</span> wyge.models.openai <span style={{color:'blue'}}> import</span>ChatOpenAI</span><br/><br/>
-                <span className='code-line-number-code'></span><br/>
-                <span className='code-line-number-code'>llm = ChatOpenAI(tools=[weather_tool()])</span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}>response = llm.run(<span style={{color:'red'}}>'What is the weather like in New York?'</span>)</span><br/>
-                <span className='code-line-number-code' style={{paddingLeft:'20px'}}>print(response)</span><br/>
+            <code className='codefont'>
+                <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from</span> wyge.models.openai <span style={{color:'blue'}}> import</span>ChatOpenAI</span><br/><br/>
+                <span className='code-line-number-code codefont'></span><br/>
+                <span className='code-line-number-code codefont'>llm = ChatOpenAI(tools=[weather_tool()])</span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}>response = llm.run(<span style={{color:'red'}}>'What is the weather like in New York?'</span>)</span><br/>
+                <span className='code-line-number-code codefont' style={{paddingLeft:'20px'}}>print(response)</span><br/>
             </code>
             </div>
            
@@ -219,8 +219,8 @@ class Guides extends Component{
             {
                 showsetUpOutput ? 
                 <div style={{padding:'20px' , width:'95%' , overflow:'auto'}} className=' code-container-one-home'>
-                    <code>
-                    <span>
+                    <code className='codefont'>
+                    <span className='codefont'>
                             Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='**Thought**: It seems like the user is looking for guidance on how to approach their homework. I will need to consider general strategies such as time management, understanding the subject matter, breaking tasks into smaller parts, and seeking help when necessary. \n\n**PAUSE**', role='assistant', function_call=None, tool_calls=None, refusal=None))<br/>
                             **Thought**: It seems like the user is looking for guidance on how to approach their homework. I will need to consider general strategies such as time management, understanding the subject matter, breaking tasks into smaller parts, and seeking help when necessary. <br/>
                             <br/>
@@ -272,38 +272,38 @@ class Guides extends Component{
             <h3 style={{paddingLeft:'10px'}}>Step 1: Setup reAct Agent</h3>
             <p style={{paddingLeft:'10px'}}>The ReAct agent requires an LLM that supports reasoning and memory. Let's create a simple agent that can help with questions like how to complete homework.</p> 
             <pre tabIndex='0' style={{boxSizing:'border-box'}} className='code-container-one-home'>
-                <code>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.agents.react_agent <span style={{color:'blue'}}> import </span> Agent </span>
+                <code className='codefont'>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from </span> wyge.agents.react_agent <span style={{color:'blue'}}> import </span> Agent </span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from </span> wyge.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>llm = ChatOpenAI(memory = True)</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefong'></span>
+                        <span className='code-line-number-code codefont'>llm = ChatOpenAI(memory = True)</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>agent = Agent(llm)</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'>agent = Agent(llm)</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'></span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'></span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'># Run the agent</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'># Run the agent</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>response = agent(<span style={{color:'red'}}>"How do I do my homework?"</span>)</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'>response = agent(<span style={{color:'red'}}>"How do I do my homework?"</span>)</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'>print(response)</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'>print(response)</span>
                     </span>
                 </code>
             </pre>
@@ -332,8 +332,8 @@ class Guides extends Component{
             {
                 showReactoutput ? 
                 <div style={{padding:'20px' , width:'95%' , overflow:'auto'}} className=' code-container-one-home'>
-                    <code>
-                        <span>
+                    <code className='codefont'>
+                        <span className='codefont'>
                             Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content="Thought: 
                             To plan a trip from Hyderabad to Goa, I need to consider several aspects: transport options (flights, 
                             trains, or road travel), accommodation in Goa, places to visit, travel duration, and activities. I'll 
@@ -552,70 +552,70 @@ class Guides extends Component{
             <h3 style={{paddingLeft:'10px'}}>Step 1: Setup ReAct Agent with Tools</h3>
             <p style={{paddingLeft:'10px'}}>Here, we will use the wikipedia_search tool and integrate it with the ReAct agent to plan a trip.</p> 
             <pre tabIndex='0' style={{boxSizing:'border-box'}} className='code-container-one-home'>
-                <code>
+                <code className='codefont'>
                     <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.agents.react_agent <span style={{color:'blue'}}> import </span> Agent </span>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from </span> wyge.agents.react_agent <span style={{color:'blue'}}> import </span> Agent </span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from </span> wyge.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.tools.prebuilt_tools <span style={{color:'red'}}>import</span> wikipedia_search </span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'><span style={{color:'blue'}}>from </span> wyge.tools.prebuilt_tools <span style={{color:'red'}}>import</span> wikipedia_search </span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'></span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'></span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'># Initialize the wikipedia_search tool</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'># Initialize the wikipedia_search tool</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>wiki_tool = wikipedia_search()</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'>wiki_tool = wikipedia_search()</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'></span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'></span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'># Create an LLM with memory and tools</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'># Create an LLM with memory and tools</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>llm = ChatOpenAI(memory = Tru, tools = [wiki_tool])</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'>llm = ChatOpenAI(memory = Tru, tools = [wiki_tool])</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'></span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'></span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'># Initialize the ReAct agent</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'># Initialize the ReAct agent</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>agent = Agent(llm)</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'>agent = Agent(llm)</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'></span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'></span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-comment'># Run the agent with a travel planning query</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-comment codefont'># Run the agent with a travel planning query</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>response = agent(<span style={{color:'red'}}>"Plan a trip from Hyderabad to Goa"</span>)</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'>response = agent(<span style={{color:'red'}}>"Plan a trip from Hyderabad to Goa"</span>)</span>
                     </span>
-                    <span className='code-line-home'>
-                        <span className='code-line-number'></span>
-                        <span className='code-line-number-code'>print(response)</span>
+                    <span className='code-line-home codefont'>
+                        <span className='code-line-number codefont'></span>
+                        <span className='code-line-number-code codefont'>print(response)</span>
                     </span>
                 </code>
             </pre>

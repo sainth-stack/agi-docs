@@ -88,8 +88,8 @@ class Python extends Component{
                 </div>
                 <div className='code-container-one-home'  style={{padding:'10px' , width:'50%'}}>
                     {secWindow === 'macrLinux' ?
-                        <code>API_KEY = "your_api_key_here"</code>
-                        :<code>API_KEY = "your_api_key_here"</code>
+                         <code className='codefont'>API_KEY = "your_api_key_here"</code>
+                        :<code className='codefont'>API_KEY = "your_api_key_here"</code>
                     }
                 </div>
                 <div>
@@ -124,7 +124,7 @@ class Python extends Component{
                 </div>        
                 <pre tabIndex='0' style={{display:'flex', flexDirection:'column' ,  width:'50%' , height:'10vh', justifyContent:'center' , lineHeight:'2.5rem' , paddingRight:'10px', paddingTop:'10px' , paddingBottom:'10px'}} className='coding-element-home new-one-python-container code-container-one-home'>
                     {thWindow === 'osModule'? 
-                    <code>
+                     <code className='codefont'>
                         <span className='code-line-home new-one-python'>
                             <span className='code-line-number code-line-number-python-one'></span>
                             <span className='code-line-number-code-python-one'><span style={{color:'blue'}}>import</span> os</span>
@@ -135,7 +135,7 @@ class Python extends Component{
                         </span>
                     </code>
                     : 
-                    <code>
+                    <code className='codefont'>
                         <span className='code-line-home new-one-python'>
                             <span className='code-line-number code-line-number-python-one'></span>
                             <span className='code-line-number-code-python-one'>from dotenv<span style={{color:'blue'}}> import</span> find_dotenv, load_dotenv<span className='code-line-comment'>  # pip install python-dotenv</span></span>
@@ -156,7 +156,7 @@ class Python extends Component{
             <h2>Install the Wyge</h2>
                 <p>To get started, install the WygeAI package using pip:</p>
                 <div className='code-container-one-home'  style={{padding:'10px' , width:'50%'}}>
-                    <code>pip install wyge</code>
+                    <code className='codefont'>pip install wyge</code>
                 </div>
         </div>
     )
@@ -166,7 +166,7 @@ class Python extends Component{
             <h2>1. Create a Basic ReACt Agent</h2>
                 <p>With the wyge installed, run the code below for the creation of the basic ReAct agent.</p>
                 <pre tabIndex='0' style={{  width:'50%' , boxSizing:"border-box",height:'20vh' }} className='coding-element-home code-container-one-home'>
-                    <code>
+                    <code className='codefont'>
                         <span className='code-line-home'>
                             <span className='code-line-number '></span>
                             <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.agents.react <span style={{color:'blue'}}>import </span>Agent </span>
@@ -580,7 +580,7 @@ class Python extends Component{
                 {
                 showLLmOutput ? 
                 <div style={{padding:'20px' , fontSize:'12px',width:'45%',overflow:'auto'}} className=' code-container-one-home'>
-                    <code>
+                    <code className='codefont'>
                         <span>{'{'}'status': 'SUCCESS',</span><br/>
                         <span>'completed':True,</span><br/>
                         <span className="token plain"> 
@@ -604,7 +604,7 @@ class Python extends Component{
                 {
                 showLLmOutput ? 
                 <div style={{padding:'20px' , fontSize:'12px',width:'45%',overflow:'auto'}} className=' code-container-one-home'>
-                    <code>
+                    <code className='codefont'>
                         <span>{'{'}'status': 'SUCCESS',</span><br/>
                         <span>'completed':True,</span><br/>
                         <span className="token plain"> 
@@ -711,7 +711,7 @@ class Python extends Component{
                     {
                     showLLmOutput ? 
                     <div style={{padding:'20px' , fontSize:'13px',width:'45%',overflow:'auto',flexWrap:'nowrap',display:'flex',boxSizing:'border-box',lineHeight:'1.5rem'}} className=' code-container-one-home'>
-                        <code style={{width:'100%'}}>
+                        <code style={{width:'100%'}} className='codefont'>
                             <span >{'{'}'details': [{'{'}'score': 0, 'document': {'}'},</span><br/>
                             <span >{'{'}'score':1,</span>
                             <span className='plain'> 
@@ -809,7 +809,7 @@ class Python extends Component{
         {
             showLLmOutput ? 
             <div style={{padding:'20px' , width:'45%'}} className=' code-container-one-home'>
-                <code>
+                <code className='codefont'>
                     <span>{'{'}'status': 'SUCCESS',</span><br/>
                     <span>'completed':True,</span>
                     <span>'data':'The capital of France is Paris.',</span><br/>
@@ -886,7 +886,7 @@ class Python extends Component{
                 }
                 <p style={{paddingLeft:'5px'}}>then combine your LLMs and tools to build an agent!</p>
                 <pre tabIndex='0' style={{width:'60%',height:'30vh'}} className='coding-element-home code-container-one-home'>
-                <code>
+                 <code className='codefont'>
                     <span className='code-line-home'>
                         <span className='code-line-number'></span>
                         <span className='code-line-number-code'>from wyge.agents.react_agent import Agent</span>
@@ -940,7 +940,7 @@ class Python extends Component{
             <div>
                 {showRunOutput ? 
                 <div style={{padding:'20px' , width:'50%' , overflow:'auto'}} className=' code-container-one-home'>
-                    <code>
+                    <code className='codefont'>
                         <span style={{display:'flex',flexDirection:'row'}}>{'{'}'completed': True,<br/> 
                         'status': 'SUCCESS', <br/> 
                         'data': {'{'}<br/>
@@ -1119,7 +1119,7 @@ class Python extends Component{
             {
             showAgentMemoryOutputOne ? 
             <div style={{padding:'20px' , width:'57%' }} className=' code-container-one-home'>
-                <code>
+                 <code className='codefont'>
                     <span>Session id: 2bfcbdfb-5b70-4634-81c0-d28366514fe7</span>
                 </code>
             </div>

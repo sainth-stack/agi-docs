@@ -569,20 +569,7 @@ class Python extends Component{
             </code>
         </div>
         </div>
-        <button 
-            style={{
-                fontSize:'12px' ,
-                marginLeft:"12px",
-                color:'grey',
-                border:'none',
-                ouline:'none',
-                backgroundColor:'transparent'
-            }}
-            onClick={this.getLLmOutput}
-        >
-        Show output
-        </button>
-        {this.getHiddenOutput()} 
+
        </div>
       )
     
@@ -678,20 +665,6 @@ class Python extends Component{
 </div>
 
         </div>
-        <button 
-            style={{
-                fontSize:'12px' ,
-                marginLeft:"12px",
-                color:'grey',
-                border:'none',
-                ouline:'none',
-                backgroundColor:'transparent'
-            }}
-            onClick={this.getLLmOutput}
-        >
-        Show output
-        </button>
-        {this.getHiddenOutputIGeneration()} 
        </div>
     )
 
@@ -855,7 +828,7 @@ class Python extends Component{
         const {model} = this.state
         return(
           <div id="TryAModel">
-            <h2>2.2 Try a model</h2>
+            <h2>2.1 Try a model</h2>
                 <p>After browsing, you can asset using the examples shown below.</p>
                 <div>
                 <button 
@@ -885,34 +858,6 @@ class Python extends Component{
                             } 
                         id="IGeneration">
                             Image Generation
-                    </button>
-                    <button 
-                        type="button" 
-                        className={
-                            model === 'Speech'? 
-                            'tab-button-python-one active-tab-python':
-                            'tab-button-python-one'
-                        } 
-                        onClick={
-                            ()=>{
-                                this.onClickModel("Speech")}
-                            } 
-                        id="Speech">
-                            Speech Synthesis
-                    </button>
-                    <button 
-                        type="button" 
-                        className={
-                            model === 'Gsearch'? 
-                            'tab-button-python-one active-tab-python':
-                            'tab-button-python-one'
-                        } 
-                        onClick={
-                            ()=>{
-                                this.onClickModel("Gsearch")}
-                            } 
-                        id="Gsearch">
-                            Google Search
                     </button>
                 </div>
                 {model==='LLM' ?
@@ -1163,20 +1108,7 @@ class Python extends Component{
                 </code>
             </div>
             </div>
-            <button 
-                style={{
-                    fontSize:'12px' ,
-                    marginLeft:"12px",
-                    color:'grey',
-                    border:'none',
-                    ouline:'none',
-                    backgroundColor:'transparent'
-                }}
-                onClick={this.onclickShowDeployAgentOutput}
-            >
-            Show output
-            </button>
-            {this.getHiddenOutputDeployAgent()} 
+     
        </div>
     )
 
@@ -1259,26 +1191,6 @@ class Python extends Component{
         <div id="UseAgentMemory">
             <h2>4.Memory Support</h2>
             <p>Enable memory to keep context between interactions with the model.</p>
-            <div className='new-one-python-container code-container-one-home' style={{padding:'20px', width:'57%'}}>
-            <code style={{fontSize:'12px' , color:'black'}}>
-                <span>session_id = response[<span style={{color:'red'}}>"data"</span>][<span style={{color:'red'}}>"session_id"</span>]</span><br/>
-                <span><span style={{color:'blue'}}>print</span><span style={{color:'red'}}>f"Session id:</span>{'{'}session_id{'}'}<span style={{color:'red'}}>")</span></span>
-            </code>
-            </div>
-            <button 
-                style={{
-                    fontSize:'12px' ,
-                    marginLeft:"12px",
-                    color:'grey',
-                    border:'none',
-                    ouline:'none',
-                    backgroundColor:'transparent'
-                }}
-                onClick={this.onClickAgentMemory}
-            >
-            Show output
-            </button>
-            {this.getHiddenOutputAgentMemory()}
             <div>
             <div className='new-one-python-container code-container-one-home' style={{padding:'20px', width:'57%'}}>
             <code style={{fontSize:'12px' , color:'black'}}>
@@ -1290,20 +1202,6 @@ class Python extends Component{
                 <span>display(agent_response)</span>
             </code>
             </div>
-            <button 
-                style={{
-                    fontSize:'12px' ,
-                    marginLeft:"12px",
-                    color:'grey',
-                    border:'none',
-                    ouline:'none',
-                    backgroundColor:'transparent'
-                }}
-                onClick={this.onClickAgentMemoryTwo}
-            >
-            Show output
-            </button>
-            {this.getHiddenOutputAgentMemoryTwo()}
             </div>
         </div>
         )
@@ -1326,7 +1224,7 @@ class Python extends Component{
                     <h2>2. Getting LLMs and tools</h2>
                     <p>Goto the Wyge LLM planner to create a LLM model, which can include API key, Description and model name. Here,you can have a single LLM to integrate into your agent use case.</p>
                 </div>
-                {this.getBrowseLLms()}
+                {/* {this.getBrowseLLms()} */}
                 {this.getModel()}
                 {this.getrunADeployAgent()}
                 {this.getUseAgentMemory()}
@@ -1346,8 +1244,7 @@ class Python extends Component{
            <a href="#InstallSdk" className={activeText==="sdk" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("sdk")}}>Install the WYGE SDK</a>
            <a href="#createAgent" className={activeText==="studio" ?  "anchor-platform active-text-platform":"anchor-platform"} onClick={()=>{this.onclickActiveText("studio")}}>1.Create an Agent</a>
            <a href="#ChooseLLms" className={activeText==="sdkArchitecture" ? "anchor-platform active-text-platform":"anchor-platform"} onClick={()=>{this.onclickActiveText("sdkArchitecture")}}>2.Choose LLMs and tools</a>
-           <a href="#BrowseLLMsTools" className={activeText==="featuresComparison" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("featuresComparison")}}>2.1 Browse for LLMs and tools</a>
-           <a href="#TryAModel" className={activeText==="model" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("model")}}>2.2 Try a model</a>
+           <a href="#TryAModel" className={activeText==="model" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("model")}}>2.1 Try a model</a>
            <a href="#RunAndDeploy" className={activeText==="runDeploy" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("runDeploy")}}>3. Run and deploy an Agent</a>
            <a href="#UseAgentMemory" className={activeText==="memory" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("memory")}}>4. Use Agent Momeory</a>
            <a href="#CreateTeamAgent" className={activeText==="agent" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("agent")}}>Next - Create a Team Agent</a>

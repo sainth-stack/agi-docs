@@ -2,292 +2,138 @@ import { Component } from 'react'
 import './index.css'
 
 class ApiRequest extends Component {
-    state = {active:'',showResOne:false,showResTwo:false,showResThree:false, showResFour:false}
-    
-    onClickShowResposeOne = () =>{
-        this.setState(prevState=>({showResOne:!prevState.showResOne}))
-    }
+    state = { active: '' }
 
     onclickActiveText = active => {
-        this.setState({activeText:active})
+        this.setState({ activeText: active })
     }
 
-    onClickShowResposeTwo = () =>{
-        this.setState(prevState=>({showResTwo:!prevState.showResTwo}))
-    }
-
-    onClickShowResposeThree = () =>{
-        this.setState(prevState=>({showResThree:!prevState.showResThree}))
-    }
-
-    onClickShowResposeFour = () =>{
-        this.setState(prevState=>({showResFour:!prevState.showResFour}))
-    }
-
-    getHiddenOutputExModelPost = () =>{
-        const {showResOne} = this.state
-        return (
-            <div>
-                {showResOne ?
-                <div  style={{width:'55%' ,padding:'10px',backgroundColor:'#f6f8fa',overflow:'auto'}}>
-                <code>
-                    <span>{'{'}</span><br/>
-                    <span>"completed":false,</span><br/>
-                    <span>"data": "https://models.aixplain.com/api/v1/data/{'<requestedId>'}",</span><br/>
-                    <span>"requestedId":"{'<requestId>'}"</span><br/>
-                    <span>{'}'}</span><br/>
-                </code>
-                </div>
-                :null
-                }
-            </div>
-        )
-    }
-
-    getModelsApi = () =>(
+    getModelCreationApi = () => (
         <div>
-            <h2>Models</h2>
-            <h3 id="modelExecute">1. Execute a Model (POST Request)</h3>
-            <div className='code-one-api-request'>
-                <code>
-                    <span>curl -X POST 'https://models.aixplain.com/api/v1/execute/{'<model_id>'}'\</span><br/>
-                    <span>-H 'x-api-key: TEAM_API_KEY' \</span><br/>
-                    <span>-H 'Content-Type:application/json' \</span><br/>
-                    <span>-d '{'{'} "data": "Your input data"{'}'}'</span>
-                </code>
-            </div>
-            <button 
-                style={{
-                    fontSize:'12px' ,
-                    marginLeft:"12px",
-                    color:'grey',
-                    border:'none',
-                    ouline:'none',
-                    backgroundColor:'transparent'
-                }}
-                onClick={this.onClickShowResposeOne}
-            >
-            Show output
-            </button>
-            {this.getHiddenOutputExModelPost()}
+            <h2>Model Creation</h2>
+            <p>
+                This API is used to create a new AI model in your environment. You need to provide details like the
+                model's name, API key, model type, and temperature for the configuration.
+            </p>
             <ul>
-                <li>Replace <code className='code-element-middle'>TEAM_API_KEY</code> with your actual API key.</li>
-                <li>The <code className='code-element-middle'>-d</code> 
-                option sends the input data to the model. if the model accepts multiple inputs, then provide them as 
-                a dictionary. For example, to provide <code className='code-element-middle'>text</code> and 
-                <code className='code-element-middle'>max_tokens</code> to an LLM use 
-                <code className='code-element-middle'>-d '{'{'}"text": "Your input text", "max_tokens": 500{'}'}'</code>
+                <li>
+                    <strong>Required Input:</strong>
+                    <ul>
+                        <li><code>name</code>: Name of the model (e.g., "model_final").</li>
+                        <li><code>api_key</code>: API key for authentication.</li>
+                        <li><code>model</code>: Model type (e.g., "gpt-4o-mini").</li>
+                        <li><code>temperature</code>: A floating value for temperature control (e.g., "0.5").</li>
+                    </ul>
                 </li>
             </ul>
+            <div className='code-one-api-request'>
+                <code>
+                    <span>curl --location 'http://13.215.228.42:4001/api/environment/create' \</span><br/>
+                    <span>--header 'Cookie: csrftoken=YOUR_CSRF_TOKEN' \</span><br/>
+                    <span>--form 'name="model_final"' \</span><br/>
+                    <span>--form 'api_key="YOUR_API_KEY"' \</span><br/>
+                    <span>--form 'model="gpt-4o-mini"' \</span><br/>
+                    <span>--form 'temperature="0.5"'</span>
+                </code>
+            </div>
         </div>
     )
 
-    getHiddenOutputRetrieveResult = () =>{
-        const {showResTwo} = this.state
-        return (
-            <div>
-                {showResTwo ?
-                <div  style={{width:'55%' ,padding:'20px',backgroundColor:'#f6f8fa',color:'#666767',overflow:'auto'}}>
-                <code>
-                    <span>{'{'}</span><br/>
-                    <span>      "completed":True,</span><br/>
-                    <span>      "data": "The output data from the model",</span><br/>
-                    <span>      "usedCredits":0.00006,</span><br/>
-                    <span>      "runTime": 1.456,</span>
-                    <span>      "details": {'{'}</span><br/>
-                         <span>                   "modelSpecificField1": "Value1",</span>
-                    <span>                      "modelSpecificField2": "Value2"</span>
-                    <span>                      {'//'}Additional fields as required by the specific model</span>
-                    <span>          {'}'}</span><br/>
-                    <span>{'}'}</span><br/>
-                </code>
-                </div>
-                :null
-                }
-            </div>
-        )
-    }
-
-    getRetriveResult = () =>(
-            <div>
-            <h3>2. Retrieve the Result (GET Request)</h3>
-            <div className='code-one-api-request'>
-                <code>
-                    <span>curl -X GET 'https://models.aixplain.com/api/v1/execute/{'<request_id>'}'\</span><br/>
-                    <span>-H 'x-api-key: TEAM_API_KEY' \</span><br/>
-                    <span>-H 'Content-Type:application/json'</span><br/>
-                </code>
-            </div>
-            <button 
-                style={{
-                    fontSize:'12px' ,
-                    marginLeft:"12px",
-                    color:'grey',
-                    border:'none',
-                    ouline:'none',
-                    backgroundColor:'transparent'
-                }}
-                onClick={this.onClickShowResposeTwo}
-            >
-            Show output
-            </button>
-            {this.getHiddenOutputRetrieveResult()}
-            </div>
-    )
-
-    getHiddenOutputExecutePipeline = () =>{
-        const {showResThree} = this.state
-        return (
-            <div>
-                {showResThree ?
-                <div  style={{width:'55%' ,padding:'10px',backgroundColor:'#f6f8fa',overflow:'auto'}}>
-                <code>
-                    <span>{'{'}</span><br/>
-                    <span>"url": "https://platform-api.aixplain.com/assets/pipeline/execution/check/{'<requestId>'}"</span><br/>
-                    <span>"status": "IN_PROGRESS",</span><br/>
-                    <span>"batchMode":true</span><br/>
-                    <span>{'}'}</span><br/>
-                </code>
-                </div>
-                :null
-                }
-            </div>
-        )
-    }
-
-    getHiddenOutputRetrivePipeline = () =>{
-        const {showResFour} = this.state
-        return (
-            <div>
-                {showResFour ?
-                <div  style={{width:'55%' ,padding:'10px',backgroundColor:'#f6f8fa',overflow:'auto'}}>
-                <code>
-                    <span>{'{'}</span><br/>
-                    <span>"status": "SUCCESS",</span><br/>
-                    <span>"data": {'[{'}"node_id":2,"label":"OUTPUT(ID=2)","path":{'{['}"node_id":0,"type":"INPUT"{'}'},{'{'}"node_id":1,"type":"ASSET","function":"text-generation"{'}'},{'{'}"node_id":2,"type":"OUTPUT"{'}]'},,</span><br/>
-                    <span>"segments": {'[{'}"index":0 , "success":true,"response":"Your generatedoutput","is_url":true,"input_type":"text","output_type":"text","details":{'{}'},"length":1644,"language":"en","input_segment_info":{'[{'}"start":0,"end":15,"length":15,"is_url":false,"type":"text","segment":"Your input data","language":"en"{'}]}]'},"is_segmented":false{'}]'},</span><br/>
-                    <span>"completed":true,</span>
-                    <span>"numofsegments":1,</span>
-                    <span>"progress":"100%",</span>
-                    <span>"elapsed_time": 7.821672677993774,</span>
-                    <span>"used_credits":0.00012299999999999998</span>
-                    <span>{'}'}</span><br/>
-                </code>
-                </div>
-                :null
-                }
-            </div>
-        )
-    }
-
-    getPipelines = () =>(
+    getAgentCreationApi = () => (
         <div>
-            <div>
-            <h2>Pipelines</h2>
-            <h3 id="executeResulsts">1.Execute a Pipeline</h3>
+            <h2>Agent Creation</h2>
+            <p>
+                This API creates a new agent for executing specific tasks. You need to provide details such as the
+                agent's name, goal, description, and instructions.
+            </p>
+            <ul>
+                <li>
+                    <strong>Required Input:</strong>
+                    <ul>
+                        <li><code>agent_name</code>: The name of the agent (e.g., "Travel planner agent").</li>
+                        <li><code>agent_goal</code>: The purpose or goal of the agent (e.g., "make travel plans 24/7").</li>
+                        <li><code>agent_description</code>: A description of the agent's role (e.g., "expert in making travel plans").</li>
+                        <li><code>agent_instruction</code>: Specific instructions for the agent (e.g., "Give straightforward answers").</li>
+                    </ul>
+                </li>
+            </ul>
             <div className='code-one-api-request'>
                 <code>
-                    <span>curl -X POST 'https://models.aixplain.com/api/v1/execute/{'<pipeline_id>'}'\</span><br/>
-                    <span>-H 'x-api-key: TEAM_API_KEY' \</span><br/>
-                    <span>-H 'Content-Type:application/json' \</span><br/>
-                    <span>-d '{'{'} "data": "Your input data"{'}'}'</span>
+                    <span>curl --location 'http://13.215.228.42:4001/api/dyn_create-agent' \</span><br/>
+                    <span>--header 'Cookie: csrftoken=YOUR_CSRF_TOKEN' \</span><br/>
+                    <span>--form 'agent_name="Travel planner agent"' \</span><br/>
+                    <span>--form 'agent_goal="make travel plans 24/7"' \</span><br/>
+                    <span>--form 'agent_description="expert in making travel plans across the globe"' \</span><br/>
+                    <span>--form 'agent_instruction="Give straightforward answers"'</span>
                 </code>
-            </div>
-            <button 
-                style={{
-                    fontSize:'12px' ,
-                    marginLeft:"12px",
-                    color:'grey',
-                    border:'none',
-                    ouline:'none',
-                    backgroundColor:'transparent'
-                }}
-                onClick={this.onClickShowResposeThree}
-            >
-            Show output
-            </button>
-            {this.getHiddenOutputExecutePipeline()}
-            </div>
-            <div>
-            <h3 id="retrieveResults">2.Retrieve the Result (GET Request)</h3>
-            <div className='code-one-api-request'>
-                <code>
-                    <span>curl -X GET 'https://models.aixplain.com/api/v1/execute/{'<pipeline_id>'}'\</span><br/>
-                    <span>-H 'x-api-key: TEAM_API_KEY' \</span><br/>
-                    <span>-H 'Content-Type:application/json' \</span><br/>
-                </code>
-            </div>
-            <button 
-                style={{
-                    fontSize:'12px' ,
-                    marginLeft:"12px",
-                    color:'grey',
-                    border:'none',
-                    ouline:'none',
-                    backgroundColor:'transparent'
-                }}
-                onClick={this.onClickShowResposeFour}
-            >
-            Show output
-            </button>
-            {this.getHiddenOutputRetrivePipeline()}
             </div>
         </div>
     )
 
-    getConvertCurlCommand = () =>(
-        <div id="convertCurl">
-            <h2>Convert Curl Commands to Any Language</h2>
-            <p>you can use a Curl converter tool to convert Curl commands into the programming language of your choice. Simply enter your Curl command in the tool, select your desired language, and copy the generated code.</p>
-            <p>https://curlconverter.com/</p>
-            <img src="https://docs.aixplain.com/img/getting_started/curl_converter.png" className='curl-image' alt='...'/>
+    getEmployeeCreationApi = () => (
+        <div>
+            <h2>Employee Creation</h2>
+            <p>
+                This API is used to create an employee agent with system instructions, tools, and environment configuration.
+            </p>
+            <ul>
+                <li>
+                    <strong>Required Input:</strong>
+                    <ul>
+                        <li><code>name</code>: The name of the employee agent (e.g., "GitAgent").</li>
+                        <li><code>system_prompt</code>: Instructions for the agent (e.g., "System instructions for agent").</li>
+                        <li><code>agent_description</code>: A brief description of the agent (e.g., "This is a test agent").</li>
+                        <li><code>tools</code>: Tools assigned to the agent (e.g., "github").</li>
+                        <li><code>upload_attachment</code>: Boolean indicating if the agent can upload attachments.</li>
+                        <li><code>env_id</code>: The environment ID where the agent operates.</li>
+                        <li><code>dynamic_agent_id</code>: The ID of the dynamic agent.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div className='code-one-api-request'>
+                <code>
+                    <span>curl --location 'http://13.215.228.42:4001/api/agent/create' \</span><br/>
+                    <span>--header 'Content-Type: application/json' \</span><br/>
+                    <span>--header 'Cookie: csrftoken=YOUR_CSRF_TOKEN' \</span><br/>
+                    <span>--data '{'{'}</span><br/>
+                    <span>&nbsp;&nbsp;"name": "GitAgent",</span><br/>
+                    <span>&nbsp;&nbsp;"system_prompt": "System instructions for agent",</span><br/>
+                    <span>&nbsp;&nbsp;"agent_description": "This is a test agent",</span><br/>
+                    <span>&nbsp;&nbsp;"tools": "github",</span><br/>
+                    <span>&nbsp;&nbsp;"upload_attachment": false,</span><br/>
+                    <span>&nbsp;&nbsp;"env_id": 1,</span><br/>
+                    <span>&nbsp;&nbsp;"dynamic_agent_id": 3</span><br/>
+                    <span>{'}'}</span>
+                </code>
+            </div>
         </div>
     )
 
-    render(){
-        const {activeText} = this.state
-    return (
-        <div className="main-container-platform">
-        <div style={{padding:'10px' , width:'70%'}}>
-            <h2>API requests quickstart</h2>
-            <p>In this quickstart, you will learn how to call models and pipelines using API requests.</p>
-            <div id="createApi">
-            <h3>Create an API key</h3>
-            <p>Create an API key on the Integrations page on Studio.</p>
+    render() {
+        const { activeText } = this.state
+        return (
+            <div className="main-container-platform">
+                <div style={{ padding: '10px', width: '70%' }}>
+                    <h2>API Requests Quickstart</h2>
+                    <p>In this quickstart, you will learn how to make API calls for model, agent, and employee creation.</p>
+                    <div id="modelCreation">
+                        {this.getModelCreationApi()}
+                    </div>
+                    <div id="agentCreation">
+                        {this.getAgentCreationApi()}
+                    </div>
+                    <div id="employeeCreation">
+                        {this.getEmployeeCreationApi()}
+                    </div>
+                </div>
+                <div className="section-3-platform">
+                    <a className={activeText === "modelCreation" ? "anchor-platform active-text-platform" : "anchor-platform"} href='#modelCreation' onClick={() => { this.onclickActiveText("modelCreation") }}>Model Creation</a>
+                    <a className={activeText === "agentCreation" ? "anchor-platform active-text-platform" : "anchor-platform"} href='#agentCreation' onClick={() => { this.onclickActiveText("agentCreation") }}>Agent Creation</a>
+                    <a className={activeText === "employeeCreation" ? "anchor-platform active-text-platform" : "anchor-platform"} href='#employeeCreation' onClick={() => { this.onclickActiveText("employeeCreation") }}>Employee Creation</a>
+                </div>
             </div>
-            <div id="models">
-                {this.getModelsApi()}
-            </div>
-            <div id="retrieveGet">
-            {this.getRetriveResult()}
-            </div>
-            <div id="pipelines">
-            {this.getPipelines()}
-            </div>
-            {this.getConvertCurlCommand()}
-            <div className="container-last-platform">
-            <div className="nxt-container">
-                <h3 className='next'>Previous</h3>
-                <a href="/python" className='platform-next'>python{">>"}</a>
-            </div>
-            <div className="nxt-container">
-                <h3 className='next'>Next</h3>
-                <a href='/tutorials' className='platform-next'>Tutorials{">>"}</a>
-            </div>
-        </div>
-        </div>
-        <div className="section-3-platform">
-           <a className={activeText==="createApi" ? "anchor-platform active-text-platform": "anchor-platform"} href='#createApi' onClick={()=>{this.onclickActiveText("createApi")}}>Create an API Key</a>
-           <a href="#models" className={activeText==="models" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("models")}}>Models</a>
-           <a href="#modelExecute" className={activeText==="modelExecute" ?  "anchor-platform active-text-platform":"anchor-platform"} onClick={()=>{this.onclickActiveText("modelExecute")}}>1. Execute a Model (POST Request)</a>
-           <a href="#retrieveGet" className={activeText==="retrieveGet" ? "anchor-platform active-text-platform":"anchor-platform"} onClick={()=>{this.onclickActiveText("retrieveGet")}}>2. Retrieve the Result (GET Request)</a>
-           <a href="#pipelines" className={activeText==="pipelines" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("pipelines")}}>Pipelines</a>
-           <a href="#executeResulsts" className={activeText==="executeResulsts" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("executeResulsts")}}>1.Execute a Pipeline (POST Request)</a>
-           <a href="#retrieveResults" className={activeText==="retrieveResults" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("retrieveResults")}}>2.Retrieve the Result (GET Request)</a>
-           <a href="#convertCurl" className={activeText==="convertCurl" ? "anchor-platform active-text-platform": "anchor-platform"} onClick={()=>{this.onclickActiveText("convertCurl")}}>Convert Curl Commands to Any Language</a>
-       </div>
-        </div>
-)
+        )
+    }
 }
-}
+
 export default ApiRequest

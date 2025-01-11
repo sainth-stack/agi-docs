@@ -23,7 +23,7 @@ class Tutorials extends Component{
         <div style={{padding:'20px' ,overflow:'auto'}} className='code-container-one-home'>
             <code>
                 <span><span style={{color:"blue"}}>import</span> os</span><br/>
-                <span>os.environ[<span style={{color:'red'}}>'OPENAI_API_KEY'</span>] = <span style={{color:'red'}}>"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"</span></span><br/>
+                <span>os.environ[<span style={{color:'red'}}>'OPENAI_API_KEY'</span>] = <span style={{color:'red'}}>"YOUR_API_KEY"</span></span><br/>
             </code>
         </div>
         <h3 style={{paddingLeft:'10px'}}>Step 2: Import Dependencies</h3>
@@ -86,7 +86,7 @@ class Tutorials extends Component{
             <div className='code-container-one-home' style={{overflow:'auto' , padding:'10px'}}>
                 <code>
                     <span className='code-line-number-code'><span style={{color:"red"}}>import</span> os</span><br/>
-                    <span className='code-line-number-code'>os.environ[<span style={{color:'red'}}>'OPENAI_API_KEY'</span>] = <span style={{color:'red'}}>"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"</span></span><br/>
+                    <span className='code-line-number-code'>os.environ[<span style={{color:'red'}}>'OPENAI_API_KEY'</span>] = <span style={{color:'red'}}>"YOUR_API_KEY"</span></span><br/>
                 </code>
             </div>
             <h3 style={{paddingLeft:'10px'}}>Step 2: Import Dependencies</h3>
@@ -144,12 +144,12 @@ class Tutorials extends Component{
         <div style={{padding:'10px' , width:'70%'}}>
             <button type='button' style={{color:'#2da4c6' , textDecoration:'underline' , border:'none',backgroundColor:'transparent',outline:'none'}} onClick={()=>{this.getHometab('home')}}>back</button>
             <h2 style={{paddingLeft:'10px'}}>Synthetic Data Generator</h2>
-            <p style={{paddingLeft:'10px'}}>In this tutorial, you will learn how to generate synthetic data using VyzeAI's OpenAi integration. We will take a dataset from an Excel file, generate additional synthetic rows that follow the same structure, and append them to the original data.</p>
+            <p style={{paddingLeft:'10px'}}>In this tutorial, you will learn how to generate synthetic data using wyge's OpenAi integration. We will take a dataset from an Excel file, generate additional synthetic rows that follow the same structure, and append them to the original data.</p>
             <h3 style={{paddingLeft:'10px'}}>Step 1: Setup Dependencies</h3>
             <p style={{paddingLeft:'10px'}}>Make sure you have the following dependencies installed:</p> 
             <div className='code-container-one-home' style={{overflow:'auto' , padding:'10px' , width:'100%'}}>
             <code >
-                <span className='code-line-number-code'>pip install pandas openai vyzeai</span>
+                <span className='code-line-number-code'>pip install pandas openai wyge</span>
             </code>
             </div>
             <h3 style={{paddingLeft:'10px'}}>Step 2: Load the Data and Initialize the Model</h3>
@@ -162,7 +162,7 @@ class Tutorials extends Component{
                     </span>
                     <span className='code-line-home'>
                         <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> vyzeai.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
+                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
                     </span>
                     <span className='code-line-home'>
                         <span className='code-line-number'></span>
@@ -389,7 +389,7 @@ class Tutorials extends Component{
                 </button>
                 <button className='tutorial-card-one' onClick={()=>{this.getHometab('syntheticData')}}>
                     <h3>Synthetic Data Generator</h3>
-                    <p>In this tutorial, you will learn how to generate synthetic data using VyzeAI's OpenAi integration.</p>                
+                    <p>In this tutorial, you will learn how to generate synthetic data using wyge's OpenAi integration.</p>                
                 </button>
             </div>
         </div>

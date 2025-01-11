@@ -52,7 +52,7 @@ class Guides extends Component{
         <div style={{padding:'20px' , width:'70%',lineHeight:'1.5rem'}}>
         <button type='button' style={{color:'#2da4c6' , textDecoration:'underline' , border:'none',backgroundColor:'transparent',outline:'none'}} onClick={()=>{this.getHometab('home')}}>back</button>
         <h2 style={{paddingLeft:'10px'}}>Using Custom Tools</h2>
-        <p style={{paddingLeft:'10px'}}>VyzeAI allows you to define custom tools and integrate them with the OpenAI model. This guide will walk you through creating a custom tool and using it with VyzeAI.</p>
+        <p style={{paddingLeft:'10px'}}>wyge allows you to define custom tools and integrate them with the OpenAI model. This guide will walk you through creating a custom tool and using it with wyge.</p>
         <h3 style={{paddingLeft:'10px'}}>Step 1: Define the Function</h3>
         <p style={{paddingLeft:'10px'}}>Start by defining a python function that you want to use as a tool. For example, let's create a function to calculate the area of a rectangle.</p>
         <div style={{fontSize:'14px',padding:'20px' ,overflow:'auto'}} className='code-container-one-home'>
@@ -117,7 +117,7 @@ class Guides extends Component{
         </div>
         <div>
         <h3 style={{paddingLeft:'10px'}}>Step 4: Use the Tool with ChatOpenAI</h3>
-        <p style={{paddingLeft:'10px'}}>Finally, use your custom tool wiwth the VyzeAI ChatOpenAI model.</p>
+        <p style={{paddingLeft:'10px'}}>Finally, use your custom tool wiwth the wyge ChatOpenAI model.</p>
         <div className='code-container-one-home'>
             <code>
                 <span className='code-line-number-code'><span style={{color:'blue'}}>from</span> wyge.models.openai <span style={{color:'blue'}}> import </span> ChatopenAI</span><br/><br/>
@@ -165,7 +165,7 @@ class Guides extends Component{
         <div style={{padding:'10px' , width:'70%'}}>
             <button type='button' style={{color:'#2da4c6' , textDecoration:'underline' , border:'none',backgroundColor:'transparent',outline:'none'}} onClick={()=>{this.getHometab('home')}}>back</button>
             <h1 style={{paddingLeft:'10px'}}>Integrating with External APIs</h1>
-            <p style={{paddingLeft:'10px'}}>you can extend VyzeAI to interact with external APIs, enabling dynamic tool functionality. This guide shows how to call an external weather API.</p>
+            <p style={{paddingLeft:'10px'}}>you can extend wyge to interact with external APIs, enabling dynamic tool functionality. This guide shows how to call an external weather API.</p>
             <h3 style={{paddingLeft:'10px'}}>Step 1: Create the API Function</h3>
             <p style={{paddingLeft:'10px'}}>First, define a function to fetch weather information from an API.</p>
             <div className='code-container-one-home'>
@@ -193,7 +193,7 @@ class Guides extends Component{
             <p style={{paddingLeft:'10px'}}>Next, register the API function as a tool.</p>
             <div className='code-container-one-home' style={{overflow:'auto' , padding:'10px'}}>
                 <code>
-                    <span className='code-line-number-code'><span style={{color:"red"}}>from</span> vyzeai.tools.base_tool <span style={{color:"blue"}}>import</span> Tool</span><br/>
+                    <span className='code-line-number-code'><span style={{color:"red"}}>from</span> wyge.tools.base_tool <span style={{color:"blue"}}>import</span> Tool</span><br/>
                     <span className='code-line-number-code'>weather_tool = Tool(func=get_weather, params = WeatherParams)</span><br/>
                 </code>
             </div>
@@ -201,7 +201,7 @@ class Guides extends Component{
             <p style={{paddingLeft:'10px'}}>Finally, use the weather tool with the ChatOpenAI model.</p>
             <div className='code-container-one-home'>
             <code>
-                <span className='code-line-number-code'><span style={{color:'blue'}}>from</span> vyzeai.models.openai <span style={{color:'blue'}}> import</span>ChatOpenAI</span><br/><br/>
+                <span className='code-line-number-code'><span style={{color:'blue'}}>from</span> wyge.models.openai <span style={{color:'blue'}}> import</span>ChatOpenAI</span><br/><br/>
                 <span className='code-line-number-code'></span><br/>
                 <span className='code-line-number-code'>llm = ChatOpenAI(tools=[weather_tool()])</span><br/>
                 <span className='code-line-number-code' style={{paddingLeft:'20px'}}>response = llm.run(<span style={{color:'red'}}>'What is the weather like in New York?'</span>)</span><br/>
@@ -268,7 +268,7 @@ class Guides extends Component{
             <button type='button' style={{color:'#2da4c6' , textDecoration:'underline' , border:'none',backgroundColor:'transparent',outline:'none'}} onClick={()=>{this.getHometab('home')}}>back</button>
             <div>
             <h2 style={{paddingLeft:'10px'}}>ReAct Agent: Basic Usage</h2>
-            <p style={{paddingLeft:'10px'}}>VyzeAI supports ReAct agents that combine reasoning and actioin. This allows agents to reason through a problem before taking action. Here's how to use a basic ReAct agent.</p>
+            <p style={{paddingLeft:'10px'}}>wyge supports ReAct agents that combine reasoning and actioin. This allows agents to reason through a problem before taking action. Here's how to use a basic ReAct agent.</p>
             <h3 style={{paddingLeft:'10px'}}>Step 1: Setup reAct Agent</h3>
             <p style={{paddingLeft:'10px'}}>The ReAct agent requires an LLM that supports reasoning and memory. Let's create a simple agent that can help with questions like how to complete homework.</p> 
             <pre tabIndex='0' style={{boxSizing:'border-box'}} className='code-container-one-home'>
@@ -555,15 +555,15 @@ class Guides extends Component{
                 <code>
                     <span className='code-line-home'>
                         <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> vyzeai.agents.react_agent <span style={{color:'blue'}}> import </span> Agent </span>
+                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.agents.react_agent <span style={{color:'blue'}}> import </span> Agent </span>
                     </span>
                     <span className='code-line-home'>
                         <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> vyzeai.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
+                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.models.openai <span style={{color:'red'}}>import</span>ChatOpenAI </span>
                     </span>
                     <span className='code-line-home'>
                         <span className='code-line-number'></span>
-                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> vyzeai.tools.prebuilt_tools <span style={{color:'red'}}>import</span> wikipedia_search </span>
+                        <span className='code-line-number-code'><span style={{color:'blue'}}>from </span> wyge.tools.prebuilt_tools <span style={{color:'red'}}>import</span> wikipedia_search </span>
                     </span>
                     <span className='code-line-home'>
                         <span className='code-line-number'></span>
@@ -643,15 +643,15 @@ class Guides extends Component{
             <div style={{padding:'10px'}}>
                 <button className='tutorial-card-one' onClick={()=>{this.getHometab('customTools')}}>
                     <h3>Using Custom Tools</h3>
-                    <p>VyzeAI allows you to define custom tools and integrate them with the OpenAI model. This guide will walk you through creating a custom tool and using it with VyzeAI.</p>
+                    <p>wyge allows you to define custom tools and integrate them with the OpenAI model. This guide will walk you through creating a custom tool and using it with wyge.</p>
                 </button>
                 <button className='tutorial-card-one' onClick={()=>{this.getHometab('integrating')}}>
                     <h3>Integrating with External APIs</h3>
-                    <p>you can extend VyzeAI to interact with external APIs, enabling dynamic tool functionality. This guide shows how to call an external weather API.</p>
+                    <p>you can extend wyge to interact with external APIs, enabling dynamic tool functionality. This guide shows how to call an external weather API.</p>
                 </button>
                 <button className='tutorial-card-one' onClick={()=>{this.getHometab('agentBasics')}}>
                     <h3>ReAct Agent: Basic Usage</h3>
-                    <p>VyzeAI supports ReAct agents that combine reasoning and actioin. This allows agents to reason through a problem before taking action. Here's how to use a basic ReAct agent.</p>                
+                    <p>wyge supports ReAct agents that combine reasoning and actioin. This allows agents to reason through a problem before taking action. Here's how to use a basic ReAct agent.</p>                
                 </button>
                 <button className='tutorial-card-one' onClick={()=>{this.getHometab('Reacttools')}}>
                     <h3>ReAct Agent with Tools</h3>

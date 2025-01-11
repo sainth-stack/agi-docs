@@ -639,19 +639,44 @@ class Python extends Component{
         <div> 
         <p style={{paddingLeft:'15px'}}>In this example, we will use the DALLE-2 - Standard (1024x1024) model.</p>
         <div className='new-one-python-container code-container-one-home' style={{padding:'20px', width:'57%'}}>
-            <code style={{fontSize:'12px'}} >
-                    <span>
-                        <span style={{color:'black'}}>model = ChatOpenAI(<span style={{color:"red"}}>memory=True</span>)</span>
-                    </span>
-                    <br/>
-                    <br/>
-                    <span>
-                        <span style={{color:'black'}}>response = model.run(<span style={{color:'red'}}>"A kitten in a kitchen wearing a chicken leg piece."</span>)</span>
-                        <br/>
-                        <span style={{color:'black'}}>response</span><br/>
-                    </span>
-            </code>
-        </div>
+    <code style={{fontSize:'12px'}}>
+        <span>
+            <span style={{color:'black'}}>
+                <span style={{color:'blue'}}>from</span> wyge.models.openai 
+                <span style={{color:'blue'}}> import</span> ChatOpenAI
+            </span>
+        </span>
+        <br />
+        <span>
+            <span style={{color:'black'}}>
+                <span style={{color:'blue'}}>from</span> wyge.tools.prebuilt_tools 
+                <span style={{color:'blue'}}> import</span> generate_image_openai
+            </span>
+        </span>
+        <br /><br />
+        <span>
+            <span style={{color:'black'}}>img_tool = generate_image_openai()</span>
+        </span>
+        <br /><br />
+        <span>
+            <span style={{color:'black'}}>llm = ChatOpenAI(tools=[img_tool])</span>
+        </span>
+        <br /><br />
+        <span>
+            <span style={{color:'black'}}>
+                <span style={{color:'black'}}>response = llm.run(
+                    <span style={{color:'red'}}>'Draw a image of a dog'</span>
+                )
+                </span>
+            </span>
+        </span>
+        <br />
+        <span>
+            <span style={{color:'black'}}>response</span>
+        </span>
+    </code>
+</div>
+
         </div>
         <button 
             style={{

@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom'
 import ReactContext from '../../ReactContext'
 import './index.css'
 
+
 const Home = () =>(
     <ReactContext.Consumer>
         {value => {
@@ -26,70 +27,102 @@ const Home = () =>(
                 </div>
                 <pre tabIndex='0' className={themeValue ==='light'? 'coding-element-home code-container-one-home':'coding-element-home code-container-one-home deploy-container-home-darkmode'}>
                     <code>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className='code-line-number-comment'>## Create an Agent</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}><span style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>import </span> os </span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>os.environ[<span style={themeValue==='light'?{color:'red'}:{color:'rgb(189, 147, 249)'}}>"API_KEY"</span>] = "{'<'}<span style={themeValue==='light'?{color:'red'}:{color:'#f411a4'}}>API_KEY</span>{'>'}"</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className='code-line-number-code'></span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}><span  style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>from</span> wyge.prebuilt_agents <span  style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>import</span> Blog Agent</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}><span  style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>from </span>from wyge.models.openai <span  style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>import</span> ChatOpenAI</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className='code-line-number-code'></span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>agent = AgentFactory.create(</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>name=<span style={themeValue==='light'?{color:'red'}:{color:'#f411a4'}}>"Google Search agent"</span>,</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>description="<span style={themeValue==='light'?{color:'red'}:{color:'#f411a4'}}>You are an agent that uses Google Search to answer queries.</span>",</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>   tools=[</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className='code-line-number-comment'>        #Google Search</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>        ModelTool(model="<span style={themeValue==='light'?{color:'red'}:{color:'#f411a4'}}>65c51c556eb563350f6e1bb1</span>"),</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>   ],</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>)</span>
-                        </span>
-                        <span className='code-line-home'>
-                            <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
-                            <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>agent_response = agent.run("<span style={themeValue==='light'?{color:'red'}:{color:'#f411a4'}}>What's an AI agent?</span>")</span>
-                        </span>
+                    <span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className='code-line-number-comment'>## Create a ReAct Agent</span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        <span style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>from </span>wyge.agents.react_agent 
+        <span style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}> import</span> Agent
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        <span style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>from </span>wyge.models.openai 
+        <span style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}> import</span> ChatOpenAI
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        <span style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}>from </span>wyge.tools.prebuilt_tools 
+        <span style={themeValue==='light'?{color:'blue'}:{color:'rgb(189, 147, 249)'}}> import</span> wikipedia_search
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}></span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        # Initialize the wikipedia_search tool
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        wiki_tool = wikipedia_search()
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}></span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        # Create an LLM with memory and tools
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        llm = ChatOpenAI(memory=True, tools=[wiki_tool])
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}></span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        # Initialize the ReAct agent
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        agent = Agent(llm)
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}></span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        # Run the agent with a travel planning query
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        response = agent("Plan a trip from Hyderabad to Goa")
+    </span>
+</span>
+<span className='code-line-home'>
+    <span className={themeValue==='light'?'code-line-number':'code-line-number code-line-number-one'}></span>
+    <span className={themeValue==='light'?'code-line-number-code':'code-line-number-code code-line-number-code-one'}>
+        print(response)
+    </span>
+</span>
+
                     </code>
                 </pre>
             </div>
